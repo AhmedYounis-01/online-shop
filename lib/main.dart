@@ -28,6 +28,7 @@ void main() async {
     startWidget = const OnBoardingScreen();
   }
 
+  // runApp(MyApp(startWidget: startWidget));
   runApp(MyApp(startWidget: startWidget));
 }
 
