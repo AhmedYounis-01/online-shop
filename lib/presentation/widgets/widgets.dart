@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:shop_app/logic/cubit/shop_cubit.dart';
+import 'package:shop_app/logic/cubits/shop_cubit/shop_cubit.dart';
 import 'package:shop_app/presentation/screens/on_boarding_screen.dart';
 import 'package:shop_app/presentation/widgets/constants.dart';
 

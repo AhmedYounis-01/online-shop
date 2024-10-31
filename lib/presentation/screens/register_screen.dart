@@ -2,9 +2,9 @@ import 'package:conditional_builder_null_safety/conditional_builder_null_safety.
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_app/data/local/cache_helper.dart';
-import 'package:shop_app/presentation/screens/register/cubit/register_cubit_cubit.dart';
-import 'package:shop_app/presentation/screens/shop/shop_layout.dart';
-import 'package:shop_app/presentation/screens/shop/shop_login_screen.dart';
+import 'package:shop_app/logic/cubits/register_cubit/register_cubit_cubit.dart';
+import 'package:shop_app/presentation/screens/shop_layout.dart';
+import 'package:shop_app/presentation/screens/shop_login_screen.dart';
 import 'package:shop_app/presentation/widgets/constants.dart';
 import 'package:shop_app/presentation/widgets/widgets.dart';
 
@@ -178,3 +178,5 @@ class ShopRegisterScreen extends StatelessWidget {
     );
   }
 }
+
+

@@ -3,33 +3,33 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_app/bloc_observer.dart';
 import 'package:shop_app/data/local/cache_helper.dart';
 import 'package:shop_app/data/remote/dio_helper.dart';
-import 'package:shop_app/logic/cubit/shop_cubit.dart';
+import 'package:shop_app/logic/cubits/shop_cubit/shop_cubit.dart';
 import 'package:shop_app/presentation/screens/on_boarding_screen.dart';
-import 'package:shop_app/presentation/screens/shop/shop_layout.dart';
-import 'package:shop_app/presentation/screens/shop/shop_login_screen.dart';
+import 'package:shop_app/presentation/screens/shop_layout.dart';
+import 'package:shop_app/presentation/screens/shop_login_screen.dart';
 import 'package:shop_app/presentation/widgets/constants.dart';
 
 void main() async {
   Bloc.observer = MyBlocObserver();
   WidgetsFlutterBinding.ensureInitialized();
-  DioHelper.init(); 
+  DioHelper.init();
   await CacheHelper.init();
 
   bool onBoarding = (CacheHelper.getData(key: "onBoarding") as bool?) ?? false;
   String? token = CacheHelper.getData(key: "token") as String?;
-  Widget startWidget;
+  Widget widget;
 
   // Decide the start widget based on token and onboarding status
   if (onBoarding) {
-    startWidget = (token != null && token.isNotEmpty)
+    widget = (token != null && token.isNotEmpty)
         ? const ShopLayout()
         : ShopLoginScreen();
   } else {
-    startWidget = const OnBoardingScreen();
+    widget = const OnBoardingScreen();
   }
 
   // runApp(MyApp(startWidget: startWidget));
-  runApp(MyApp(startWidget: startWidget));
+  runApp(MyApp(startWidget: widget));
 }
 
 class MyApp extends StatelessWidget {

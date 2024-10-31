@@ -3,7 +3,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop_app/logic/cubit/shop_cubit.dart';
+import 'package:shop_app/logic/cubits/shop_cubit/shop_cubit.dart';
 import 'package:shop_app/models/categories_model.dart';
 import 'package:shop_app/models/home_model.dart';
 import 'package:shop_app/presentation/widgets/constants.dart';
@@ -49,8 +49,10 @@ class ProductsScreen extends StatelessWidget {
                   .map(
                     (e) => CachedNetworkImage(
                       imageUrl: e.image!,
-                      placeholder: (context, url) =>
-                          const Center(child: CircularProgressIndicator(color: Colors.white,)),
+                      placeholder: (context, url) => const Center(
+                          child: CircularProgressIndicator(
+                        color: Colors.white,
+                      )),
                       errorWidget: (context, url, error) =>
                           const Icon(Icons.error),
                       fit: BoxFit.cover,
@@ -105,7 +107,7 @@ class ProductsScreen extends StatelessWidget {
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
                   crossAxisCount: 2,
-                  childAspectRatio: 1 / 1.7,
+                  childAspectRatio: 1 / 1.9,
                   crossAxisSpacing: 2,
                   mainAxisSpacing: 2,
                   children: List.generate(
@@ -126,8 +128,10 @@ class ProductsScreen extends StatelessWidget {
       children: [
         CachedNetworkImage(
           imageUrl: "${model.image}",
-          placeholder: (context, url) =>
-              const Center(child: CircularProgressIndicator(color: Colors.white,)),
+          placeholder: (context, url) => const Center(
+              child: CircularProgressIndicator(
+            color: Colors.white,
+          )),
           errorWidget: (context, url, error) => const Icon(Icons.error),
           width: 120,
           height: 120,
@@ -161,8 +165,10 @@ class ProductsScreen extends StatelessWidget {
               children: [
                 CachedNetworkImage(
                   imageUrl: "${model.image}",
-                  placeholder: (context, url) =>
-                      const Center(child: CircularProgressIndicator(color: Colors.white,)),
+                  placeholder: (context, url) => const Center(
+                      child: CircularProgressIndicator(
+                    color: Colors.white,
+                  )),
                   errorWidget: (context, url, error) => const Icon(Icons.error),
                   height: 200,
                   width: double.infinity,

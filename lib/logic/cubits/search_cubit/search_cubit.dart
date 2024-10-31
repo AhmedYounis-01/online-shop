@@ -1,5 +1,5 @@
-import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+// ignore: depend_on_referenced_packages
 import 'package:meta/meta.dart';
 import 'package:shop_app/data/end_point.dart';
 import 'package:shop_app/data/remote/dio_helper.dart';

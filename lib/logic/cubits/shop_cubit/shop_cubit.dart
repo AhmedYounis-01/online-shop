@@ -9,10 +9,11 @@ import 'package:shop_app/models/change_favorites_model.dart';
 import 'package:shop_app/models/favorites_model.dart';
 import 'package:shop_app/models/home_model.dart';
 import 'package:shop_app/models/shop_login_model.dart';
-import 'package:shop_app/presentation/screens/nav_screens/categories_screen.dart';
-import 'package:shop_app/presentation/screens/nav_screens/favorites_screen.dart';
-import 'package:shop_app/presentation/screens/nav_screens/products_screen.dart';
-import 'package:shop_app/presentation/screens/nav_screens/settings_screen.dart';
+import 'package:shop_app/presentation/screens/navbar_screens/categories_screen.dart';
+import 'package:shop_app/presentation/screens/navbar_screens/favorites_screen.dart';
+import 'package:shop_app/presentation/screens/navbar_screens/products_screen.dart';
+import 'package:shop_app/presentation/screens/navbar_screens/settings_screen.dart';
+
 import 'package:shop_app/presentation/widgets/constants.dart';
 
 part 'shop_state.dart';
@@ -135,6 +136,7 @@ class ShopCubit extends Cubit<ShopStates> {
     ).then(
       (value) {
         userModel = ShopLoginModel.fromJson(value!.data);
+        // ignore: avoid_print
         print("the name is working ${userModel!.data!.name}");
         emit(ShopSuccessUserDataState());
       },
